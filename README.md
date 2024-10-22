@@ -16,19 +16,35 @@ This project focuses on simulating the Motoman SIA10F robotic arm using the Move
 - **Catkin**: Make sure your ROS environment is set up with a Catkin workspace.
 
 ### Installing Required Packages
+
 1. **Install Xacro**: Xacro is used for processing XACRO files.
-   ```
+   ```bash
    sudo apt-get install ros-noetic-xacro
    ```
 
 2. **Install RViz**: RViz is required for visualizing the robot model.
-   ```
+   ```bash
    sudo apt-get install ros-noetic-rviz
    ```
 
 3. **Install MoveIt!**: MoveIt! is used for motion planning and manipulation.
-   ```
+   ```bash
    sudo apt-get install ros-noetic-moveit
+   ```
+
+4. **Install Joint State Publisher**: The Joint State Publisher publishes the state of the robot's joints.
+   ```bash
+   sudo apt-get install ros-noetic-joint-state-publisher
+   ```
+
+5. **Install Robot State Publisher**: The Robot State Publisher publishes the state of the robot in TF.
+   ```bash
+   sudo apt-get install ros-noetic-robot-state-publisher
+   ```
+
+6. **Install Gazebo and Other Required Packages**: This command installs Gazebo and other necessary packages.
+   ```bash
+   sudo apt-get install ros-noetic-gazebo-ros ros-noetic-std-msgs ros-noetic-urdf ros-noetic-roscpp
    ```
 
 ### Setup Steps
