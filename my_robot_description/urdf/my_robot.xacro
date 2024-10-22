@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="my_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Import the SIA10F robot arm from the URDF macro file using xacro -->
+  <!-- The `sia10f_description` package is assumed to contain the description for the SIA10F robot. -->
+  <!-- The 'motoman_sia10f' macro defines the robot structure, including all the links and joints. -->
+  <xacro:include filename="$(find motoman_sia10f_support)/urdf/sia10f_macro.xacro"/>
+  <xacro:motoman_sia10f prefix=""/>
+
+  <!-- Define a world link that acts as a fixed reference frame for the robot environment -->
+  <link name="world"/>
+  
+  <!-- Define a frame for the camera, which will be mounted at a fixed position relative to the world -->
+  <link name="camera_frame"/>
+
+  <!-- Table definition: A simple table with a 1m x 1m top and 5cm thickness -->
+  <link name="table">
+    <visual>
+      <geometry>
+        <box size="1 1 0.05"/> <!-- Table dimensions: Width: 1m, Depth: 1m, Height: 0.05m -->
+      </geometry>
+      <material name="Gray"> <!-- Visual appearance of the table -->
+        <color rgba="0.5 0.5 0.5 1.0"/> <!-- Gray color -->
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 0.05"/> <!-- Collision geometry matches the visual geometry (box) -->
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="20.0"/> <!-- Mass of the table is set to 20kg -->
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/> <!-- Inertia tensor of the table -->
+    </inertial>
+  </link>
+
+  <!-- Fixed joint to attach the table to the world frame -->
+  <!-- The table is positioned 0.5m above the world frame (on the Z axis) -->
+  <joint name="world_to_table" type="fixed">
+    <parent link="world"/>  <!-- The table is connected to the 'world' link -->
+    <child link="table"/>   <!-- The table link itself -->
+    <origin xyz="0 0 0.5" rpy="0 0 0"/> <!-- Table is positioned 0.5m above the ground (Z-axis) -->
+  </joint>
+
+  <!-- Joint to connect the camera frame to the world -->
+  <!-- The camera is fixed 1m above the world frame (Z axis) and rotated 90 degrees around Y-axis -->
+  <joint name="world_to_camera" type="fixed">
+    <parent link="world"/>   <!-- The camera is attached to the 'world' link -->
+    <child link="camera_frame"/> <!-- The 'camera_frame' link is where the camera will be positioned -->
+    <origin xyz="0 0 1.0" rpy="0 1.571 0"/> <!-- Positioned 1m above the ground, rotated by 90 degrees on Y -->
+  </joint>
+
+  <!-- Fixed joint to attach the base of the robot arm (base_link) to the table -->
+  <!-- The robot base will sit directly on the table with no additional offset -->
+  <joint name="table_to_robot" type="fixed">
+    <parent link="table"/>   <!-- Parent link is the table -->
+    <child link="base_link"/> <!-- Child link is the 'base_link' of the robot arm (imported from SIA10F) -->
+    <origin xyz="0 0 0" rpy="0 0 0"/> <!-- No additional offset: the robot base is directly on the table -->
+  </joint>
+
+</robot>

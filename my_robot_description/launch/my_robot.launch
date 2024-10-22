@@ -1,0 +1,46 @@
+<launch>
+  <!-- 
+  Load the robot's URDF file, generated from a Xacro file.
+  The 'robot_description' parameter is a common parameter name used by 
+  various ROS nodes to access the robot's description in URDF format.
+  The 'command' attribute uses 'xacro' to convert the .xacro file into URDF.
+  -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot_description)/urdf/my_robot.xacro'" />
+
+  <!-- 
+  Enable the GUI for the joint_state_publisher node.
+  This parameter is often used to determine if the GUI for joint state publishing 
+  should be enabled. It is set to 'true' to enable the GUI.
+  -->
+  <param name="use_gui" value="true" />
+
+  <!-- 
+  Launch the 'joint_state_publisher' node. 
+  This node publishes the joint states of the robot based on either the GUI input or from sensor data.
+  It uses the 'joint_state_publisher' package and runs the 'joint_state_publisher' executable.
+  -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- 
+  Launch the 'robot_state_publisher' node. 
+  This node publishes the transforms (TFs) for the robot's links based on the joint states 
+  that are provided by the 'joint_state_publisher'. It is critical for transforming the robot's joints
+  in the 3D environment.
+  -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- 
+  Define an argument named 'rviz' with a default value of 'true'. 
+  This argument is used as a switch to determine whether to launch RViz or not.
+  -->
+  <arg name="rviz" default="true"/>
+
+  <!-- 
+  Launch the RViz node if the 'rviz' argument is 'true'.
+  RViz is a visualization tool in ROS. Here, we specify the RViz configuration file 
+  (located in the industrial_robot_client package) that defines how the robot's state will be visualized.
+  The 'required="true"' attribute means if this node crashes, the entire launch process will stop.
+  -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot_description)/config/my_robot_state_visualize.rviz" required="true" />
+
+</launch>

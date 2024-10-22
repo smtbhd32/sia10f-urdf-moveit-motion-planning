@@ -1,0 +1,62 @@
+.
+├── [  49]  CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
+├── [   0]  file_structure.txt
+├── [4.0K]  motoman
+│   ├── [4.0K]  motoman_resources
+│   │   ├── [ 189]  CMakeLists.txt
+│   │   ├── [1.2K]  package.xml
+│   │   └── [4.0K]  urdf
+│   │       ├── [ 515]  common_colors.xacro
+│   │       └── [ 892]  common_materials.xacro
+│   └── [4.0K]  motoman_sia10f_support
+│       ├── [ 655]  CHANGELOG.rst
+│       ├── [ 336]  CMakeLists.txt
+│       ├── [4.0K]  config
+│       │   ├── [ 102]  joint_names_sia10f.yaml
+│       │   └── [5.0K]  robot_state_visualize.rviz
+│       ├── [4.0K]  launch
+│       │   ├── [ 147]  load_sia10f.launch
+│       │   ├── [ 710]  robot_interface_streaming_sia10f.launch
+│       │   ├── [ 988]  robot_state_visualize_sia10f.launch
+│       │   └── [ 464]  test_sia10f.launch
+│       ├── [4.0K]  meshes
+│       │   └── [4.0K]  sia10f
+│       │       ├── [4.0K]  collision
+│       │       │   ├── [ 85K]  motoman_axis_b.stl
+│       │       │   ├── [ 59K]  motoman_axis_e.stl
+│       │       │   ├── [ 93K]  motoman_axis_l.stl
+│       │       │   ├── [ 65K]  motoman_axis_r.stl
+│       │       │   ├── [ 75K]  motoman_axis_s.stl
+│       │       │   ├── [ 13K]  motoman_axis_t.stl
+│       │       │   ├── [ 77K]  motoman_axis_u.stl
+│       │       │   └── [ 19K]  motoman_base.stl
+│       │       └── [4.0K]  visual
+│       │           ├── [ 85K]  motoman_axis_b.stl
+│       │           ├── [ 59K]  motoman_axis_e.stl
+│       │           ├── [ 93K]  motoman_axis_l.stl
+│       │           ├── [ 65K]  motoman_axis_r.stl
+│       │           ├── [ 75K]  motoman_axis_s.stl
+│       │           ├── [ 13K]  motoman_axis_t.stl
+│       │           ├── [ 77K]  motoman_axis_u.stl
+│       │           └── [ 19K]  motoman_base.stl
+│       ├── [1.9K]  package.xml
+│       ├── [4.0K]  test
+│       │   └── [2.3K]  launch_test.xml
+│       └── [4.0K]  urdf
+│           ├── [6.3K]  sia10f.urdf
+│           ├── [ 224]  sia10f.xacro
+│           └── [6.5K]  sia10f_macro.xacro
+└── [4.0K]  my_robot_description
+    ├── [6.9K]  CMakeLists.txt
+    ├── [4.0K]  config
+    │   └── [7.1K]  my_robot_state_visualize.rviz
+    ├── [4.0K]  include
+    │   └── [4.0K]  my_robot_description
+    ├── [4.0K]  launch
+    │   └── [2.1K]  my_robot.launch
+    ├── [2.7K]  package.xml
+    ├── [4.0K]  src
+    └── [4.0K]  urdf
+        └── [2.9K]  my_robot.xacro
+
+19 directories, 40 files
