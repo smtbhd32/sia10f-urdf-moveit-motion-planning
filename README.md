@@ -72,4 +72,5 @@ The `scripts` folder contains Python scripts for commanding the robot arm throug
 
 #### Acknowledgements
 This project builds upon tutorials by The Construct and resources from other contributors.
+
 ---
