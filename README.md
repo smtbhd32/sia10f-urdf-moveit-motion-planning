@@ -15,62 +15,48 @@ This project focuses on simulating the Motoman SIA10F robotic arm using the Move
 - **ROS**: Ensure you have ROS Noetic installed on your system.
 - **Catkin**: Make sure your ROS environment is set up with a Catkin workspace.
 
-### Installing Required Packages
-
-1. **Install Xacro**: Xacro is used for processing XACRO files.
-   ```bash
-   sudo apt-get install ros-noetic-xacro
-   ```
-
-2. **Install RViz**: RViz is required for visualizing the robot model.
-   ```bash
-   sudo apt-get install ros-noetic-rviz
-   ```
-
-3. **Install MoveIt!**: MoveIt! is used for motion planning and manipulation.
-   ```bash
-   sudo apt-get install ros-noetic-moveit
-   ```
-
-4. **Install Joint State Publisher**: The Joint State Publisher publishes the state of the robot's joints.
-   ```bash
-   sudo apt-get install ros-noetic-joint-state-publisher
-   ```
-
-5. **Install Robot State Publisher**: The Robot State Publisher publishes the state of the robot in TF.
-   ```bash
-   sudo apt-get install ros-noetic-robot-state-publisher
-   ```
-
-6. **Install Gazebo and Other Required Packages**: This command installs Gazebo and other necessary packages.
-   ```bash
-   sudo apt-get install ros-noetic-gazebo-ros ros-noetic-std-msgs ros-noetic-urdf ros-noetic-roscpp
-   ```
-
 ### Setup Steps
 1. Clone this repository into your ROS workspace:
-   ```
+   ```bash
    cd ~/ros_ws/src
    git clone https://github.com/smtbhd32/sia10f-urdf-moveit-motion-planning/
    ```
 
-2. Build your workspace:
+2. **Pull the latest changes** (if needed):
+   ```bash
+   cd sia10f-urdf-moveit-motion-planning
+   git pull
+   cd ..
    ```
+
+3. Install all required packages and dependencies defined in the `rosdep` file:
+   ```bash
+   rosdep install --from-paths src --ignore-src -r -y
+   ```
+
+4. Build your workspace:
+   ```bash
    cd ~/ros_ws
    catkin_make
    ```
 
-3. Source the workspace:
-   ```
+5. Source the workspace:
+   ```bash
    source devel/setup.bash
    ```
 
 ## Usage
 
-### Launching the Robot
-To launch the robot model in RViz, use the following command:
+### Launching the Robot Simulation
+To launch the Gazebo simulation, use the following command:
+```bash
+roslaunch sia10f_gazebo main.launch
 ```
-roslaunch my_robot_description my_robot.launch
+
+### Running MoveIt! for Planning and Execution
+To control the robot using MoveIt!, launch the following command:
+```bash
+roslaunch my_robot_moveit_config my_robot_planning_execution.launch
 ```
 
 ### Example Commands
@@ -84,3 +70,5 @@ This project is based on the tutorial by The Construct (https://www.youtube.com/
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
