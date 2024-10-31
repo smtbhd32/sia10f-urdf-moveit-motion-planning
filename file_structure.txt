@@ -61,7 +61,10 @@
 │   │   ├── trajectory_execution.launch.xml
 │   │   ├── warehouse.launch
 │   │   └── warehouse_settings.launch.xml
-│   └── package.xml
+│   ├── package.xml
+│   └── scripts
+│       ├── moveit_example.py
+│       └── moveit_joint_control_example.py
 ├── osrf-common
 │   ├── CMakeLists.txt
 │   └── osrf_msgs
@@ -126,4 +129,4 @@
         └── worlds
             └── sia10f.world
 
-32 directories, 94 files
+33 directories, 96 files
