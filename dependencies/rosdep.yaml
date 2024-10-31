@@ -1,0 +1,46 @@
+# rosdep.yaml
+dependencies:
+  ubuntu:
+    apt:
+      - ros-noetic-robot-state-publisher
+      - ros-noetic-joint-state-publisher
+      - ros-noetic-gazebo-ros
+      - ros-noetic-rviz
+      - ros-noetic-xacro
+      - ros-noetic-gazebo
+      - ros-noetic-std-msgs
+      - ros-noetic-urdf
+      - ros-noetic-roscpp
+      - ros-noetic-moveit
+      - ros-noetic-moveit-core
+      - ros-noetic-moveit-ros
+      - ros-noetic-moveit-planners
+      - ros-noetic-moveit-visualization
+      - ros-noetic-moveit-commander
+      - ros-noetic-moveit-msgs
+      - ros-noetic-industrial-msgs  # Added industrial_msgs
+      - ros-noetic-industrial-robot-client  # Added industrial_robot_client
+      - ros-noetic-industrial-utils  # Added industrial_utils
+      - ros-noetic-motoman-msgs  # Added motoman_msgs
+      - ros-noetic-simple-message  # Added simple_message
+      - ros-noetic-sensor-msgs  # Added sensor_msgs
+      - ros-noetic-trajectory-msgs  # Added trajectory_msgs
+      - ros-noetic-control-toolbox  # Added control_toolbox
+      - ros-noetic-controller-manager-msgs  # Added controller_manager_msgs
+      - ros-noetic-controller-interface  # Added controller_interface
+      - ros-noetic-controller-manager  # Added controller_manager
+      - ros-noetic-diff-drive-controller  # Added diff_drive_controller
+      - ros-noetic-effort-controllers  # Added effort_controllers
+      - ros-noetic-force-torque-sensor-controller  # Added force_torque_sensor_controller
+      - ros-noetic-forward-command-controller  # Added forward_command_controller
+      - ros-noetic-gripper-action-controller  # Added gripper_action_controller
+      - ros-noetic-hardware-interface  # Added hardware_interface
+      - ros-noetic-imu-sensor-controller  # Added imu_sensor_controller
+      - ros-noetic-joint-limits-interface  # Added joint_limits_interface
+      - ros-noetic-joint-state-controller  # Added joint_state_controller
+      - ros-noetic-joint-trajectory-controller  # Added joint_trajectory_controller
+      - ros-noetic-position-controllers  # Added position_controllers
+      - ros-noetic-realtime-tools  # Added realtime_tools
+      - ros-noetic-rqt-joint-trajectory-controller  # Added rqt_joint_trajectory_controller
+      - ros-noetic-transmission-interface  # Added transmission_interface
+      - ros-noetic-velocity-controllers  # Added velocity_controllers

@@ -1,0 +1,31 @@
+sia10f:
+  gazebo_ros_control:
+    pid_gains:
+      joint_s:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_l:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_e:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_u:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_r:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_b:
+        p: 100.0
+        i: 0.1
+        d: 0.01
+      joint_t:
+        p: 100.0
+        i: 0.1
+        d: 0.01
