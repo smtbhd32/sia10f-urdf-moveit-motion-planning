@@ -1,7 +1,3 @@
-Here's the project description as you've written it:
-
----
-
 ### Motoman SIA10F Simulation with MoveIt!
 
 #### Project Description
