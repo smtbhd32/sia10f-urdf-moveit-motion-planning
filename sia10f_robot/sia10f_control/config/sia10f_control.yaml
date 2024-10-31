@@ -1,0 +1,59 @@
+sia10f:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  # Publish joint states at 50 Hz
+    state_publish_rate: 50  # Ensure state is published at 50 Hz
+
+# Trajectory Controllers ---------------------------------------
+  joint_trajectory_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - joint_s
+      - joint_l
+      - joint_e
+      - joint_u
+      - joint_r
+      - joint_b
+      - joint_t
+    constraints:
+      goal_time: 0.5  # Time allowed to reach the goal
+      stopped_velocity_tolerance: 0.5  # Tolerance for stopping velocity
+      joint_s:
+        trajectory: 0.1  # Trajectory duration for joint_s
+        goal: 0.5        # Target position for joint_s
+        goal_tolerance: 0.05  # Allowable error for joint_s
+      joint_l:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_l
+      joint_e:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_e
+      joint_u:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_u
+      joint_r:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_r
+      joint_b:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_b
+      joint_t:
+        trajectory: 0.1
+        goal: 0.5
+        goal_tolerance: 0.05  # Allowable error for joint_t
+    gains:
+      joint_s: {p: 150, d: 0, i: 1, i_clamp: 1}  # Increased p gain for joint_s
+      joint_l: {p: 150, d: 0, i: 1, i_clamp: 1}
+      joint_e: {p: 150, d: 0, i: 1, i_clamp: 1}
+      joint_u: {p: 150, d: 0, i: 1, i_clamp: 1}
+      joint_r: {p: 150, d: 0, i: 1, i_clamp: 1}
+      joint_b: {p: 150, d: 0, i: 1, i_clamp: 1}
+      joint_t: {p: 150, d: 0, i: 1, i_clamp: 1}
+
+    state_publish_rate: 50  # Ensure joint states are published at 50 Hz
