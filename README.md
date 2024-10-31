@@ -40,10 +40,6 @@ This project simulates the Motoman SIA10F robotic arm using the MoveIt! package 
 #### Usage
 
 ##### Launching the Simulation in Gazebo
-- **Start an empty Gazebo world:**
-    ```bash
-    roslaunch sia10f_gazebo empty_world.launch
-    ```
 - **Run the main simulation launch file:**
     ```bash
     roslaunch sia10f_gazebo main.launch
