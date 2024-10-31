@@ -71,5 +71,5 @@ The `scripts` folder contains Python scripts for commanding the robot arm throug
 - **scripts:** Contains Python scripts for planning and executing commands via MoveIt.
 
 #### Acknowledgements
-    This project builds upon tutorials by The Construct and resources from other contributors.
+This project builds upon tutorials by The Construct and resources from other contributors.
 ---
