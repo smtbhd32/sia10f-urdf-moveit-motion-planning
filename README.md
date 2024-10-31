@@ -19,7 +19,7 @@ This project focuses on simulating the Motoman SIA10F robotic arm using the Move
 1. Clone this repository into your ROS workspace:
    ```bash
    cd ~/ros_ws/src
-   git clone https://github.com/smtbhd32/sia10f-urdf-moveit-motion-planning/
+   git clone https://github.com/smtbhd32/sia10f-urdf-moveit-motion-planning.git
    ```
 
 2. **Pull the latest changes** (if needed):
